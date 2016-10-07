@@ -232,6 +232,12 @@ ul.products li.product {
       h1 {
         font-size: 1.8em;
       }
+      ul {
+        .attribute-label {
+            font-weight: 600;
+            line-height: 2em;
+        }
+      }
     }
   }
 }
