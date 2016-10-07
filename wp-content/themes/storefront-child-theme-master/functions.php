@@ -64,6 +64,53 @@ function custom_storefront_credit() {
   <?php
 }
 
+
+
+/**
+ * Remove reviews tab
+ */
+
+add_filter( 'woocommerce_product_tabs', 'woo_remove_product_tabs', 98 );
+
+function woo_remove_product_tabs( $tabs ) {
+
+    unset( $tabs['description'] );      	// Remove the description tab
+    unset( $tabs['reviews'] ); 			// Remove the reviews tab
+    unset( $tabs['additional_information'] );  	// Remove the additional information tab
+
+    return $tabs;
+
+}
+
+
+/**
+ * Hook in each tabs callback function after single content.
+ */
+
+add_action( 'woocommerce_after_single_product_summary', 'woocommerce_product_description_tab' );
+add_action( 'woocommerce_after_single_product_summary', 'woocommerce_product_additional_information_tab' );
+// add_action( 'woocommerce_after_single_product_summary', 'comments_template' );
+
+
+/**
+ * Rename Description and Additional Info tabs
+ */
+
+ // Change Product Description Heading
+ add_filter('woocommerce_product_description_heading',
+ 'change_description_heading');
+
+ function change_description_heading() {
+     return 'Presenter(s)';
+ }
+
+//Change Additional Information Heading
+ add_filter('woocommerce_product_additional_information_heading', 'change_info_heading');
+ function change_info_heading(){
+   return 'Details';
+ }
+
+
 /**
  * Remove my-account and search from footer
  */
