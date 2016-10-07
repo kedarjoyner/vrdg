@@ -63,6 +63,7 @@ h6 {
   @media (min-width: 479px) {
     .site-main h1.page-title {
       font-size: 42px; } }
+
 .site-main .page-description {
   font-size: 18px;
   line-height: 24px; }
@@ -237,7 +238,6 @@ h1.page-title {
     width: 100%;
     height: 3px;
     background: #2795E7;
-    -webkit-transition: all 0.35s ease;
     transition: all 0.35s ease; }
   .hamburger span:nth-of-type(2) {
     top: 9px;
@@ -247,14 +247,14 @@ h1.page-title {
     background: #2795E7; }
 
 .hamburger.active .top {
-  -webkit-transform: translateY(9px) translateX(0) rotate(45deg);
-          transform: translateY(9px) translateX(0) rotate(45deg); }
+  transform: translateY(9px) translateX(0) rotate(45deg); }
+
 .hamburger.active .middle {
   opacity: 0;
   background: #2795E7; }
+
 .hamburger.active .bottom {
-  -webkit-transform: translateY(-9px) translateX(0) rotate(-45deg);
-          transform: translateY(-9px) translateX(0) rotate(-45deg); }
+  transform: translateY(-9px) translateX(0) rotate(-45deg); }
 
 /**
   * Product Gallery on Homepage
@@ -265,22 +265,27 @@ h1.page-title {
 
 ul.products li.product .woocommerce-LoopProduct-link {
   border: 1px solid #eee; }
+
 ul.products li.product img {
   width: 100%; }
+
 ul.products li.product h3 {
   padding: 0 10px;
   font-size: 1em; }
   @media screen and (min-width: 1061px) {
     ul.products li.product h3 {
       font-size: 1.2em; } }
+
 ul.products li.product .add_to_cart_button {
   margin-top: 20px; }
+
 ul.products li.product .price {
   font-weight: bold;
   font-size: 16px; }
   @media screen and (min-width: 1061px) {
     ul.products li.product .price {
       font-size: 20px; } }
+
 ul.products li.product .attributes {
   width: 100%;
   background-color: #eee;

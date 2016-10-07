@@ -1,0 +1,15 @@
+{
+  "name": "storefront-child-theme-master",
+  "version": "1.0.0",
+  "description": "The StoreFront Child Theme is a starter blank child theme for WooThemes StoreFront WooCommerce theme.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kedar Joyner",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.3.2"
+  }
+}

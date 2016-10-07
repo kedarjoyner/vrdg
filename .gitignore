@@ -6,6 +6,9 @@
 *.swp
 Thumbs.db
 
+# theme node modules
+wp-content/themes/storefront-child-theme-master/node_modules
+
 # wordpress specific
 wp-config.php
 wp-content/uploads/
