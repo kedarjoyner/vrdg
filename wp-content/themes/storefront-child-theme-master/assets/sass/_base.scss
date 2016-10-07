@@ -1,0 +1,104 @@
+/**
+ * Global styles applied to all non-woocommerce theme components. Includes styles for;
+ *
+ * Typography
+ * Header
+ * Footer
+ * Main content area
+ * Accessiblity helper classes
+ * 404
+ * Comments
+ * Content (posts etc)
+ * Forms
+ * Media
+ * Menus
+ * pagination
+ * Post formats
+ * Widgets
+ */
+
+
+/**
+*Typography
+*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $header-font;
+		font-weight: 500;
+    color: $color_body;
+}
+
+.site-main {
+  h1.page-title {
+  	font-weight: 100;
+  	font-size: 32px;
+    line-height: 46px;
+  	text-transform: uppercase;
+  	text-align: center;
+    @media (min-width: 479px) { font-size: 42px; }
+  }
+  .page-description {
+    font-size: 18px;
+    line-height: 24px;
+    @media (min-width: 479px) { font-size: 20px; line-height: 28px; letter-spacing: 0.02em; }
+  }
+}
+
+a {
+  text-decoration: none !important;
+  color: $color_body;
+  &:hover { color: $blue; }
+  &:focus { outline: none; }
+}
+
+.custom-menu-items {
+  a {
+    color: $color_body;
+    font-size: 16px;
+    font-weight: 600;
+    background: transparent;
+      &:hover { color: $blue;}
+      &:focus { outline: none; }
+    }
+}
+
+body {
+  font-family: $base-font;
+}
+
+img {
+  border-radius: 0;
+}
+
+/**
+*Buttons
+*/
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+.button,
+.added_to_cart,
+.widget a.button,
+.site-header-cart .widget_shopping_cart a.button {
+  background-color: $blue;
+  border: none;
+  &:hover {
+    background-color: $darkblue;
+    border-color: transparent;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+
+.single_add_to_cart_button.alt {
+  @extend .button;
+}

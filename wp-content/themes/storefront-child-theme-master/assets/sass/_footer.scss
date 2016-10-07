@@ -1,0 +1,49 @@
+
+.site-footer {
+  padding: 10px 5%;
+  background-color: #FFF;
+  position: relative;
+  .site-info {
+    font-size: 14px;
+    font-weight: 600;
+    color: $color_body;
+    text-align: center;
+    padding: 0;
+    padding-top: 15px;
+    // text-align: center;
+    @media screen and( min-width: 468px ) {
+      font-size: 18px;
+    }
+    @media screen and( min-width: 601px ) {
+      float: left;
+    }
+  }
+}
+
+/**
+* Handheld footer bar
+*/
+.storefront-handheld-footer-bar {
+ background-color: #FFF;
+ position: relative;
+ // float: right;
+ display: block;
+ width: 80px;
+ margin: auto;
+ border: none;
+ box-shadow: none;
+  @media screen and( min-width: 601px ) {
+    float: right;
+  }
+   @media screen and( min-width: $small ) {
+  	display: block;
+  }
+  ul li.cart {
+     a {
+      background-color: #FFF;
+      color: $blue !important;
+    }
+    .count { background-color: #FFF }
+  }
+  // ul { margin: 0 0 1em 3em !important; }
+}

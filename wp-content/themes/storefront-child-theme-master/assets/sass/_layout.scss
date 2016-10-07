@@ -1,0 +1,215 @@
+/**
+ * Strictly Layout Styles
+ */
+
+
+
+.content-area {
+  padding-top: 20px;
+}
+
+/**
+ * Remove breadcrumbs
+ */
+
+// .woocommerce-breadcrumb {
+//   display: none;
+// }
+
+/**
+  * Header
+  */
+h1.page-title {
+    margin-top: 55px;
+}
+.page-description p:last-child {
+    margin-bottom: 50px;
+}
+
+/**
+ * Navigation
+ */
+.header-wrap {
+    border-bottom: 1px solid $lightblue;
+    .logo-wrap {
+      padding-left: 3%;
+        .nav-logo { float: left; width: 180px; }
+    }
+}
+.custom-nav-wrap{
+    margin: 0 auto;
+    height: 60px;
+    line-height: 60px;
+    position: relative;
+    margin-top: 10px;
+    padding-right: 3%;
+    .custom-menu-wrap {
+      @media screen and (min-width: $large ) {
+        float: right;
+      }
+    }
+    .custom-menu-items {
+        display: none;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        top: 61px;
+        background-color: #fff;
+        width: 100%;
+        z-index: 999;
+        height: 100vh;
+        @media screen and( min-width: $large ) {
+            display: block !important;
+            background-color: transparent;
+            float: right;
+            position: relative;
+            top: 0;
+            z-index: 0;
+            margin: auto;
+            height: auto;
+            li {
+              display: inline;
+            }
+        }
+        li {
+            list-style-type: none;
+            padding: 5px 20px;
+            //submenu styles on mobile
+            ul.sub-menu {
+                // position: absolute;
+                background-color: #FFF;
+                display: none;
+                @media screen and( min-width: $large ) {
+                    position: absolute;
+                    left: 0;
+                    top: 100%;
+                    margin-left: 0;
+                    background-color: #FFF;
+                    border: 1px solid rgba(0,0,0,0.15);
+                    min-width: 160px;
+                    li {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}
+/**
+ * Hamburger menu
+ */
+// hamburger styles
+.hamburger {
+    position: relative;
+    margin-top: 18px;
+    float: right;
+    width: 36px;
+    height: 27px;
+    cursor: pointer;
+    @media screen and( min-width: $large ) {
+        display: none;
+    }
+    span {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 3px;
+        background: $blue;
+        transition: all 0.35s ease;
+    }
+    span:nth-of-type(2) {
+        top: 9px;
+        background: $blue;
+    }
+    span:nth-of-type(3) {
+        top: 18px;
+        background: $blue;
+    }
+}
+// hamburger transition
+.hamburger {
+    &.active {
+        .top {
+            transform: translateY(9px) translateX(0) rotate(45deg);
+        }
+        .middle {
+            opacity: 0;
+            background: $blue;
+        }
+        .bottom {
+            transform: translateY(-9px) translateX(0) rotate(-45deg);
+        }
+    }
+}
+
+/**
+  * Product Gallery on Homepage
+  */
+
+// increase width of product container
+.home {
+  .col-full {
+    @media screen and( min-width: 768px ) {
+        max-width: 79.141em;
+    }
+  }
+}
+
+ul.products li.product {
+  .woocommerce-LoopProduct-link {
+    border: 1px solid $gray
+  }
+  img {
+    width: 100%;
+  }
+  h3 {
+    padding: 0 10px;
+    font-size: 1em;
+    @media screen and( min-width: 1061px ) {
+      font-size: 1.2em;
+    }
+  }
+  .add_to_cart_button {
+    margin-top: 20px;
+  }
+  .price {
+    font-weight: bold;
+    font-size: 16px;
+    @media screen and( min-width: 1061px ) {
+      font-size: 20px;
+    }
+  }
+  .attributes {
+    width: 100%;
+    background-color: $gray;
+    padding: 8px;
+    .shop_attributes {
+        color: $color_body;
+        margin: 0 auto;
+        width: 55%;
+        th, td {
+        padding: .5em 0.41575em;
+        background-color: transparent;
+        font-size: 14px;
+        @media screen and( min-width: 1061px ) {
+          font-size: 16px;
+        }
+      }
+      th {
+        font-weight: bold;
+        text-align: right;
+        &:after {
+          content: ": ";
+        }
+      }
+      td {
+        // padding-left: 10px;
+      }
+    }
+  }
+}
+
+/**
+ * Single Products Page
+ */

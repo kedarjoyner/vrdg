@@ -1,0 +1,32 @@
+// Some common variables and mixins to get you started.
+// Variables allow you to re-use colors, sizes, and other values without repeating
+// yourself. This means that changes that should be small, such as tweaking the
+// coloring or the sizing, can be done in one place, not all over the stylesheet.
+
+$base-font: 		  Arial, Helvetica, sans-serif;
+$header-font: 		$base-font;
+
+// base color scheme
+$body-background: 	#ffffff;
+$color_body: 		#4c4848;
+$blue: #2795E7;
+/*$blue: #ff0000;*/
+$lightblue: rgba(39,149,231,0.5);
+$darkblue: #1b68a1;
+$gray: #eee;
+
+/**
+ * Breakpoints
+ */
+
+// Extra small devices
+$x-small: 480px;
+
+// Small devices, tables
+$small: 768px;
+
+// Medium devices, desktops
+$medium: 992px;
+
+// Large devices, wide screens
+$large: 1200px;
