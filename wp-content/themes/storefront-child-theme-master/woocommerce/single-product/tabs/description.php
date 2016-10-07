@@ -41,16 +41,19 @@ $heading = esc_html( apply_filters( 'woocommerce_product_description_heading', _
 		// vars
 		$name = get_sub_field('name');
 		$image = get_sub_field('image');
+		$url = $image['url'];
+		$size = 'medium';
+		$large = $image['sizes'][$size];
 		$description = get_sub_field('description');
 
 		?>
 
 			<?php if( $name ): ?>
-				<h3><?php echo $name; ?></h3>
+				<h4><?php echo $name; ?></h4>
 			<?php endif; ?>
 
 			<?php if( $image ): ?>
-				<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>" />
+				<img src="<?php echo $large ?>" alt="<?php echo $image['alt'] ?>" />
 			<?php endif; ?>
 
 			<?php if( $description ): ?>

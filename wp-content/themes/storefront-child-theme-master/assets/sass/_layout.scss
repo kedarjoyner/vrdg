@@ -213,3 +213,25 @@ ul.products li.product {
 /**
  * Single Products Page
  */
+
+.single-product {
+  .content-area {
+      h2 {
+        font-size: 1.5em !important;
+        font-weight: 600;
+      }
+      h4 {
+        font-size: 1.2em;
+      }
+    .presenter-wrap {
+      padding-top: .5em;
+      padding-bottom: 3em;
+      img { padding: .8em 0; }
+    }
+    .summary {
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+  }
+}

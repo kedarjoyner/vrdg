@@ -67,6 +67,14 @@ a {
     }
 }
 
+ul {
+  list-style-type: none;
+  margin: 0;
+  .attribute-label {
+    font-weight: 600;
+  }
+}
+
 body {
   font-family: $base-font;
 }

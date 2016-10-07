@@ -88,7 +88,7 @@ function woo_remove_product_tabs( $tabs ) {
  */
 
 add_action( 'woocommerce_after_single_product_summary', 'woocommerce_product_description_tab' );
-add_action( 'woocommerce_after_single_product_summary', 'woocommerce_product_additional_information_tab', 0  );
+//add_action( 'woocommerce_after_single_product_summary', 'woocommerce_product_additional_information_tab', 0  );
 // add_action( 'woocommerce_after_single_product_summary', 'comments_template' );
 
 
@@ -101,13 +101,13 @@ add_action( 'woocommerce_after_single_product_summary', 'woocommerce_product_add
  'change_description_heading');
 
  function change_description_heading() {
-     return 'Presenter(s)';
+     return 'Presenter(s):';
  }
 
 //Change Additional Information Heading
  add_filter('woocommerce_product_additional_information_heading', 'change_info_heading');
  function change_info_heading(){
-   return 'Details';
+   return 'Details:';
  }
 
 
@@ -122,3 +122,67 @@ function jk_remove_handheld_footer_links( $links ) {
 	unset( $links['search'] );
 	return $links;
 }
+
+/**
+ * Show product attributes above "Add to Cart" on single products
+ */
+
+
+function isa_woocommerce_all_pa(){
+
+    global $product;
+    $attributes = $product->get_attributes();
+
+    if ( ! $attributes ) {
+        return;
+    }
+
+    $out = '<ul class="custom-attributes">';
+
+    foreach ( $attributes as $attribute ) {
+
+
+        // skip variations
+        if ( $attribute['is_variation'] ) {
+        continue;
+        }
+
+
+        if ( $attribute['is_taxonomy'] ) {
+
+            $terms = wp_get_post_terms( $product->id, $attribute['name'], 'all' );
+
+            // get the taxonomy
+            $tax = $terms[0]->taxonomy;
+
+            // get the tax object
+            $tax_object = get_taxonomy($tax);
+
+            // get tax label
+            if ( isset ($tax_object->labels->name) ) {
+                $tax_label = $tax_object->labels->name;
+            } elseif ( isset( $tax_object->label ) ) {
+                $tax_label = $tax_object->label;
+            }
+
+            foreach ( $terms as $term ) {
+
+                $out .= '<li class="' . esc_attr( $attribute['name'] ) . ' ' . esc_attr( $term->slug ) . '">';
+                $out .= '<span class="attribute-label">' . $tax_label . ': </span> ';
+                $out .= '<span class="attribute-value">' . $term->name . '</span></li>';
+
+            }
+
+        } else {
+
+            $out .= '<li class="' . sanitize_title($attribute['name']) . ' ' . sanitize_title($attribute['value']) . '">';
+            $out .= '<span class="attribute-label">' . $attribute['name'] . ': </span> ';
+            $out .= '<span class="attribute-value">' . $attribute['value'] . '</span></li>';
+        }
+    }
+
+    $out .= '</ul>';
+
+    echo $out;
+}
+add_action('woocommerce_single_product_summary', 'isa_woocommerce_all_pa', 25);
