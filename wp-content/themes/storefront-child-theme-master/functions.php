@@ -88,7 +88,7 @@ function woo_remove_product_tabs( $tabs ) {
  */
 
 add_action( 'woocommerce_after_single_product_summary', 'woocommerce_product_description_tab' );
-add_action( 'woocommerce_after_single_product_summary', 'woocommerce_product_additional_information_tab' );
+add_action( 'woocommerce_after_single_product_summary', 'woocommerce_product_additional_information_tab', 0  );
 // add_action( 'woocommerce_after_single_product_summary', 'comments_template' );
 
 
@@ -96,7 +96,7 @@ add_action( 'woocommerce_after_single_product_summary', 'woocommerce_product_add
  * Rename Description and Additional Info tabs
  */
 
- // Change Product Description Heading
+// Change Product Description Heading
  add_filter('woocommerce_product_description_heading',
  'change_description_heading');
 
@@ -109,6 +109,7 @@ add_action( 'woocommerce_after_single_product_summary', 'woocommerce_product_add
  function change_info_heading(){
    return 'Details';
  }
+
 
 
 /**
