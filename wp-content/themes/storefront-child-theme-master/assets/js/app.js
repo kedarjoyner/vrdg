@@ -15,5 +15,6 @@ $('.custom-menu-items > li').click(function() {
   $(this).children('ul.sub-menu').slideToggle();
     // $('ul.sub-menu').not($(this).children("ul").toggleClass()).hide();
   });
-
 });
+
+console.log("test minification");
