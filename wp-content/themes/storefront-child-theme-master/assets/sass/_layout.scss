@@ -226,7 +226,13 @@ ul.products li.product {
     .presenter-wrap {
       padding-top: .5em;
       padding-bottom: 3em;
-      img { padding: .8em 0; }
+      img {
+        padding: .8em .8em .125em 0;
+        // float: left;
+        @media screen and(min-width: $small ) {
+          float: left;
+        }
+      }
     }
     .summary {
       h1 {

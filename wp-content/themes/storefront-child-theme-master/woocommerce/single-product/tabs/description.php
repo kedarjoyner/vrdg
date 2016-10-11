@@ -57,7 +57,9 @@ $heading = esc_html( apply_filters( 'woocommerce_product_description_heading', _
 			<?php endif; ?>
 
 			<?php if( $description ): ?>
+				<div class="description">
 				<p><?php echo $description; ?></p>
+				</div>
 			<?php endif; ?>
 
 
