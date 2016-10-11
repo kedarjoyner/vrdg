@@ -22,11 +22,11 @@
 <body <?php body_class(); ?>>
 <!-- <div id="page" class="hfeed site"> -->
 <header class="header-wrap">
+	<nav class="custom-nav-wrap">
 		<div class="logo-wrap">
-		<a href="https://www.vrdevelopmentgroup.com/index.aspx"><img class="nav-logo" src="<?php echo 		get_stylesheet_directory_uri();?>/assets/img/logo.png" alt="VR Development Group logo" /></a>
+		<a target="_blank" href="https://www.vrdevelopmentgroup.com/index.aspx"><img class="nav-logo" src="<?php echo get_stylesheet_directory_uri();?>/assets/img/logo.png" alt="VR Development Group logo" /></a>
 		</div>
 
-	<nav class="custom-nav-wrap">
 		<?php wp_nav_menu( array( 'menu' => 'Custom Menu', 'menu_class' => 'custom-menu-items', 'container_class' => "custom-menu-wrap", 'theme_location' => 'custom-menu',  ) ); ?>
 
 		<div class="hamburger" id="toggle">

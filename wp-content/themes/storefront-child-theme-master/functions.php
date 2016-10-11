@@ -32,9 +32,6 @@ function sf_child_theme_dequeue_style() {
 add_action( 'init', 'register_my_menu' );
 
 
- /**
-  * Show custom attributes on shop page
-  */
 
 
 // function show_attr() {
@@ -44,7 +41,7 @@ add_action( 'init', 'register_my_menu' );
 //     $product->list_attributes();
 //     echo '</div>';
 // }
-add_action('woocommerce_after_shop_loop_item_title', 'show_attr');
+// add_action('woocommerce_after_shop_loop_item_title', 'show_attr');
 
 //
 //
@@ -200,4 +197,21 @@ function isa_woocommerce_all_pa(){
     echo $out;
 }
 add_action('woocommerce_single_product_summary', 'isa_woocommerce_all_pa', 25);
+
+/**
+ * Show custom attributes on shop page
+ */
+
 add_action('woocommerce_after_shop_loop_item_title', 'isa_woocommerce_all_pa');
+
+
+/**
+ * Customize breadcrumbs
+ */
+
+add_filter( 'woocommerce_breadcrumb_defaults', 'jk_change_breadcrumb_home_text' );
+function jk_change_breadcrumb_home_text( $defaults ) {
+    // Change the breadcrumb home text from 'Home' to 'Appartment'
+	$defaults['home'] = 'Upcoming Webinars';
+	return $defaults;
+}
