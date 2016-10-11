@@ -36,13 +36,28 @@ add_action( 'init', 'register_my_menu' );
   * Show custom attributes on shop page
   */
 
-function show_attr() {
-    global $product;
-    echo '<div class="attributes">';
-    $product->list_attributes();
-    echo '</div>';
-}
+
+// function show_attr() {
+//     global $product;
+//     $attributes = $product->get_attributes();
+//     echo '<div class="attributes">';
+//     $product->list_attributes();
+//     echo '</div>';
+// }
 add_action('woocommerce_after_shop_loop_item_title', 'show_attr');
+
+//
+//
+// function remove_attribute ( $attributes ) {
+//   if( is_shop() ){
+//     if( isset( $attributes['pa_crc-credits'] ) ){
+//       unset( $attributes['pa_crc-credits'] );
+//     }
+//   }
+//   $product-> list_attributes();
+// }
+//
+// add_filter('woocommerce_after_shop_loop_item_title', 'remove_attributes');
 
 
  /**
@@ -129,7 +144,6 @@ function jk_remove_handheld_footer_links( $links ) {
 
 
 function isa_woocommerce_all_pa(){
-
     global $product;
     $attributes = $product->get_attributes();
 
@@ -137,7 +151,7 @@ function isa_woocommerce_all_pa(){
         return;
     }
 
-    $out = '<ul class="custom-attributes">';
+    $out = '<div class="attributes"><ul class="custom-attributes">';
 
     foreach ( $attributes as $attribute ) {
 
@@ -181,8 +195,9 @@ function isa_woocommerce_all_pa(){
         }
     }
 
-    $out .= '</ul>';
+    $out .= '</ul></div>';
 
     echo $out;
 }
 add_action('woocommerce_single_product_summary', 'isa_woocommerce_all_pa', 25);
+add_action('woocommerce_after_shop_loop_item_title', 'isa_woocommerce_all_pa');

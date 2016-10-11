@@ -158,7 +158,10 @@ h1.page-title {
 
 ul.products li.product {
   .woocommerce-LoopProduct-link {
-    border: 1px solid $gray
+    border: 1px solid $gray;
+  }
+  a:hover {
+    color: $color_body;
   }
   img {
     width: 100%;
@@ -181,34 +184,45 @@ ul.products li.product {
     }
   }
   .attributes {
-    width: 100%;
-    background-color: $gray;
-    padding: 8px;
-    .shop_attributes {
-        color: $color_body;
-        margin: 0 auto;
-        width: 55%;
-        th, td {
-        padding: .5em 0.41575em;
-        background-color: transparent;
-        font-size: 14px;
-        @media screen and( min-width: 1061px ) {
-          font-size: 16px;
-        }
-      }
-      th {
-        font-weight: bold;
-        text-align: right;
-        &:after {
-          content: ": ";
-        }
-      }
-      td {
-        // padding-left: 10px;
-      }
+    // width: 100%;
+    background-color: #f8f8f8;
+    padding: 2em;
+    line-height: 2.5em;
+    font-size: 14.5px;
+    @media screen and( min-width: $large ) {
+      font-size: 16px;
     }
+    a:hover {
+      color: $gray;
+    }
+  //   .shop_attributes {
+  //       color: $color_body;
+  //       margin: 0 auto;
+  //       max-width: 70%;
+  //       @media screen and ( min-width: $large) {
+  //         width: 75%;
+  //       }
+  //       th, td {
+  //       padding: .5em 0.41575em;
+  //       background-color: transparent;
+  //       font-size: 14px;
+  //       @media screen and( min-width: 1061px ) {
+  //         font-size: 16px;
+  //       }
+  //     }
+  //     th {
+  //       font-weight: bold;
+  //       text-align: right;
+  //       &:after {
+  //         content: ": ";
+  //       }
+  //     }
+  //     td {
+  //       padding-left: 10px;
+  //     }
+  //   }
   }
-}
+ }
 
 /**
  * Single Products Page
